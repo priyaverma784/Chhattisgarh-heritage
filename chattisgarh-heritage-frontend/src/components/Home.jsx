@@ -3,6 +3,7 @@ import Navbar from  './navbar.jsx';
 import Herosection from './HeroSection.jsx';
 import Heritagesection from './heritageSection.jsx';
 import FeaturedHeritage from './FeaturedHeritage.jsx';
+import Footer from "./footer.jsx";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Herosection />
             <Heritagesection />
             <FeaturedHeritage />
+            <Footer />
             
         </div>
     );

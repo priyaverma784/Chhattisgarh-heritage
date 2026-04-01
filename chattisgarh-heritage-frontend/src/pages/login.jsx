@@ -1,16 +1,64 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import { handleError, handleSuccess } from '../utils';
 import loginPageImage from "../assets/login-page-cover.png";
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Login() {
 
-  const handleLogin = (e) => {
+    const [loginInfo, setLoginInfo] = useState({
+        email: '',
+        password: ''
+    })
+
+  const navigate = useNavigate();
+
+   const handlechange = (e) => {
+        const { name, value } = e.target;
+        console.log(name, value);
+        const copyLoginInfo = { ...loginInfo };
+        copyLoginInfo[name] = value;
+        setLoginInfo(copyLoginInfo);
+    }
+
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+        const { email, password } = loginInfo;
+        if (!email || !password) {
+            return handleError('email and password are required')
+        }
+        try {
+            const url = `http://localhost:8000/auth/login`;
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginInfo)
+            });
+            const result = await response.json();
+            const { success, message, jwtToken, name, email, error } = result;
+            if (success) {
+                handleSuccess(message);
+                localStorage.setItem('token', jwtToken);
+                localStorage.setItem('loggedInUser', name);
+                localStorage.setItem('email', loginInfo.email);
+                setTimeout(() => {
+                    navigate("/");
+                }, 1000)
+            } else if (error) {
+                const details = error?.details[0].message;
+                handleError(details);
+            } else if (!success) {
+                handleError(message);
+            }
+            console.log(result);
+        } catch (err) {
+            handleError(err);
+        }
+
   };
 
   return (
@@ -55,37 +103,36 @@ const Login = () => {
 
           <form onSubmit={handleLogin}>
 
-            {/* Email */}
             <div className="mb-4">
               <label className="block text-sm text-gray-700 mb-1">
                 Email
               </label>
               <input
+               onChange={handlechange}
                 type="email"
+                 name='email'
                 placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={loginInfo.email}
                 required
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E0B84C]"
               />
             </div>
 
-            {/* Password */}
             <div className="mb-4">
               <label className="block text-sm text-gray-700 mb-1">
                 Password
               </label>
               <input
+                onChange={handlechange}
                 type="password"
+                name='password'
                 placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={loginInfo.password}
                 required
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E0B84C]"
               />
             </div>
 
-            {/* Remember + Forgot */}
             <div className="flex items-center justify-between mb-6 text-sm">
               <label className="flex items-center gap-2">
                 <input type="checkbox" className="accent-[#8B2E1F]" />
@@ -96,7 +143,6 @@ const Login = () => {
               </a>
             </div>
 
-            {/* Login Button */}
             <button
               type="submit"
               className="w-full bg-[#8B2E1F] text-white py-3 rounded-lg font-semibold hover:bg-[#6F2217] transition-all duration-300 shadow-md"
@@ -106,12 +152,10 @@ const Login = () => {
 
           </form>
 
-          {/* Divider */}
           <div className="my-6 text-center text-gray-500 text-sm">
             — New here? —
           </div>
 
-          {/* Signup Button */}
           <Link
             to="/signup"
             className="block text-center bg-[#E0B84C] text-[#3A2A1A] py-3 rounded-lg font-semibold hover:bg-[#d4aa3c] transition-all duration-300"
@@ -121,7 +165,7 @@ const Login = () => {
 
         </div>
       </motion.div>
-
+      <ToastContainer />
     </div>
   );
 };

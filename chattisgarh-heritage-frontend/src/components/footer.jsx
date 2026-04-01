@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -23,10 +24,9 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-yellow-400 cursor-pointer">Home</li>
-            <li className="hover:text-yellow-400 cursor-pointer">About</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Blog</li>
-            <li className="hover:text-yellow-400 cursor-pointer">Contact</li>
+            <Link to="/"><li className="hover:text-yellow-400 cursor-pointer">Home</li></Link>
+            <Link to="/about"><li className="hover:text-yellow-400 cursor-pointer">About</li></Link>
+            <Link to="/contact"><li className="hover:text-yellow-400 cursor-pointer">Contact</li></Link>
           </ul>
         </div>
 
@@ -36,11 +36,11 @@ const Footer = () => {
             Heritage
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>Folk Dance</li>
-            <li>Festivals</li>
-            <li>Tribes</li>
-            <li>Architecture</li>
-            <li>Rituals</li>
+            <Link to="heritage/folkdances"><li className="hover:text-yellow-400 cursor-pointer">Folk Dance</li></Link>
+            <Link to="heritage/festivals"><li className="hover:text-yellow-400 cursor-pointer">Festivals</li></Link>
+            <Link to="heritage/tribes"><li className="hover:text-yellow-400 cursor-pointer">Tribes</li></Link>
+            <Link to="heritage/architecture"><li className="hover:text-yellow-400 cursor-pointer">Architecture</li></Link>
+            <Link to="heritage/traditionalfood"><li className="hover:text-yellow-400 cursor-pointer">Traditional Food</li></Link>
           </ul>
         </div>
 
