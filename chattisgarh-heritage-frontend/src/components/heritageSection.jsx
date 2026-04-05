@@ -2,7 +2,7 @@ import folkDance from "../assets/folk-dance.png";
 import Festivals from "../assets/festivals2.png";
 import Tribes from "../assets/tribes.png";
 import Architechture from "../assets/architecture.png";
-import TraditionalFood from "../assets/TraditionalFood.png";
+import TraditionalFood from "../assets/traditionalfood.png";
 import { useNavigate } from "react-router-dom";
 
 const Heritagesection = () => {
