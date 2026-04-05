@@ -21,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/contributememory" element={<ContributeMemory />} />
+        <Route path="/contributememory" element={<ProtectedRoute><ContributeMemory /></ProtectedRoute>} />
         <Route path="/exploreheritage" element={<ExploreHeritage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/heritage/:category" element={<HeritageCategory />} />

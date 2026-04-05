@@ -42,10 +42,6 @@ const Profile = () => {
 
           <div className="mt-6 flex flex-col gap-3">
 
-            <button className="bg-[#8b3a2b] text-white py-2 rounded-lg hover:bg-[#6d2c21] transition">
-              Edit Profile
-            </button>
-
             <button
               onClick={() => {
                 localStorage.removeItem("loggedInUser");

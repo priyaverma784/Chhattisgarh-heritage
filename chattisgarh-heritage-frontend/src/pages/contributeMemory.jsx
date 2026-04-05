@@ -107,11 +107,17 @@ const ContributeMemory = () => {
                 className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#E0B84C]"
               >
                 <option value="">Select Category</option>
-                <option value="folkDance">Folk Dance</option>
+                <option value="folkdances">Folk Dance</option>
                 <option value="festivals">Festivals</option>
                 <option value="tribes">Tribes</option>
                 <option value="architecture">Architecture</option>
-                <option value="rituals">Rituals</option>
+                <option value="traditionalfood">Traditional Food </option>
+                <option value="handicrafts">Handicrafts</option>
+                <option value="musicinstruments">Music Instruments</option>
+                <option value="freedomfighters">Freedom Fighters</option>
+                <option value="district-wiseheritage">District-Wise Heritage</option>
+                <option value="wildlifenature">Wildlife and Nature</option>
+                <option value="traditionalcostumes">Traditional Costumes</option>
               </select>
             </div>
 
