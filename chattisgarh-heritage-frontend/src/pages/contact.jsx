@@ -22,7 +22,7 @@ const Contact = () => {
 
     try {
 
-      await axios.post("http://localhost:8000/api/contact", formData);
+      await axios.post("https://chhattisgarh-heritage.onrender.com/api/contact", formData);
 
       alert("Message Sent Successfully!");
 

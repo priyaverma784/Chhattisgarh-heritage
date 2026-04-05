@@ -52,7 +52,7 @@ const ExploreHeritage = () => {
   const handleLike = async (categoryName) => {
 
     try {
-      await fetch(`http://localhost:8000/api/heritage/like/${categoryName}`, {
+      await fetch(`https://chhattisgarh-heritage.onrender.com/api/heritage/like/${categoryName}`, {
         method: "PUT"
       });
     } catch (error) {

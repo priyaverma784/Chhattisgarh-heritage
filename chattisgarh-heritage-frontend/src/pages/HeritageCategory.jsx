@@ -11,7 +11,7 @@ const HeritageCategory = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/heritage/${category}`)
+      .get(`https://chhattisgarh-heritage.onrender.com/api/heritage/${category}`)
       .then((res) => {
         setData(res.data);
       })
@@ -46,7 +46,7 @@ const HeritageCategory = () => {
                 {/* Image */}
                 <div className="overflow-hidden">
                   <img
-                    src={`http://localhost:8000/${item.image}`}
+                    src={`https://chhattisgarh-heritage.onrender.com/${item.image}`}
                     alt={item.title}
                     className="w-full h-[220px] object-cover group-hover:scale-110 transition duration-500"
                   />

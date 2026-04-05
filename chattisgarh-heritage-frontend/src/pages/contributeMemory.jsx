@@ -34,7 +34,7 @@ const ContributeMemory = () => {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/memory/add",
+        "https://chhattisgarh-heritage.onrender.com/api/memory/add",
         data
       );
 

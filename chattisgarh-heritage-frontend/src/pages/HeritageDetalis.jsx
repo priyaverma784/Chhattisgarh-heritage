@@ -9,7 +9,7 @@ const HeritageDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/heritage/item/${id}`)
+      .get(`https://chhattisgarh-heritage.onrender.com/api/heritage/item/${id}`)
       .then((res) => {
         setItem(res.data);
       })

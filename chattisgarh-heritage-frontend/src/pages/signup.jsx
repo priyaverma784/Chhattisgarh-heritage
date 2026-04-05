@@ -35,7 +35,7 @@ function Signup() {
     }
 
     try {
-      const url = "http://localhost:8000/auth/signup";
+      const url = "https://chhattisgarh-heritage.onrender.com/auth/signup";
 
       const response = await fetch(url, {
         method: "POST",
