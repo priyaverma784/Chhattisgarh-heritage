@@ -15,7 +15,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://chhattisgarh-heritage.vercel.app/"
+    "https://chhattisgarh-heritage-g8chs925d-priya-vermas-projects-f6292e3f.vercel.app/"
   ],
   methods: ["GET","POST","PUT","DELETE"],
   credentials: true
