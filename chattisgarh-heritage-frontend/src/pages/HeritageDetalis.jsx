@@ -29,7 +29,7 @@ const HeritageDetails = () => {
         <div className="text-gray-700 text-lg leading-relaxed text-justify">
 
           <img
-            src={`http://localhost:8000/${item.image}`}
+            src={`https://chhattisgarh-heritage.onrender.com/${item.image}`}
             alt={item.title}
             className="w-[320px] md:w-[380px] float-right ml-6 mb-4 rounded-xl shadow-lg hover:scale-105 transition duration-500"
           />
