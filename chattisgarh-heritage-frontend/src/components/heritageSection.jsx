@@ -9,7 +9,7 @@ const Heritagesection = () => {
   const navigate = useNavigate();
 
   const heritageItems =
-    "relative h-[150px] sm:h-[180px] md:h-[200px] overflow-hidden bg-cover bg-center bg-no-repeat shadow-md";
+    "relative h-[150px] sm:h-[200px] md:h-[200px] overflow-hidden bg-cover bg-center bg-no-repeat shadow-md";
 
   const heritageButtons =
     "absolute bottom-0 left-0 font-bold text-sm md:text-[18px] w-full p-[12px] md:p-[14px] border-none text-white hover:bg-[rgba(0,0,0,0.6)] hover:text-white transition duration-300";
