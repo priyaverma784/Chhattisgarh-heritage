@@ -17,7 +17,7 @@ const app = express();
 // Allowed Origins (NO trailing slash)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://chhattisgarh-heritage.vercel.app/"
+  "https://chhattisgarh-heritage.vercel.app"
 ];
 
 // CORS Configuration (Best Practice)
