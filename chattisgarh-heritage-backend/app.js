@@ -14,27 +14,16 @@ import contactRoutes from "./routes/contactRoutes.js";
 
 const app = express();
 
-// Allowed Origins (NO trailing slash)
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://chhattisgarh-heritage.vercel.app"
-];
-
-// CORS Configuration (Best Practice)
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like Postman, mobile apps)
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error("CORS not allowed for this origin: " + origin));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: [
+    "http://localhost:5173",
+    "https://chhattisgarh-heritage.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
+
+app.options("*", cors());
 
 // Middleware
 app.use(express.json());
