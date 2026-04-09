@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
-import loginPageImage from "../assets/login-page-cover.png";
+import loginPageImage from "../assets/loginPageImage.png";
 import { handleError, handleSuccess } from "../utils.js";
 
 function Signup() {

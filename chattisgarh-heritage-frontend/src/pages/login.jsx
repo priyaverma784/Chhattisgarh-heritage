@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-import loginPageImage from "../assets/login-page-cover.png";
+import loginPageImage from "../assets/loginPageImage.png";
 
 function Login() {
 
