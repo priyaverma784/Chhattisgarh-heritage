@@ -37,7 +37,6 @@ const Profile = () => {
 
           <div className="text-left space-y-3">
             <p><span className="font-semibold">Location:</span> India</p>
-            <p><span className="font-semibold">Member Since:</span> 2024</p>
           </div>
 
           <div className="mt-6 flex flex-col gap-3">
